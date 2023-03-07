@@ -1,23 +1,27 @@
-import type { FC } from 'react'
+import { useEffect, type FC } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 // @ts-ignore
-import pulledMetas from './cache.json'
+import * as cachedData from '../cache.json' assert { type: 'json' }
 
 const OnMetas: FC = () => {
   const { pathname, route } = useRouter()
 
-  console.log('from lib!', pathname, route, pulledMetas)
+  console.log('from lib!', pathname, route, cachedData)
+
+  useEffect(() => {
+    // trigger api log
+  }, [])
 
   if (false) {
     // TODO placeholder metas
   }
 
-  if (pulledMetas[pathname]) {
+  if (cachedData.metas[pathname]) {
     return (
       <Head>
-        <title>OnMetas - {pulledMetas[pathname]}</title>
+        <title>OnMetas - {cachedData.metas[pathname]}</title>
       </Head>
     )
   }

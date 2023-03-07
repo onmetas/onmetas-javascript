@@ -7,16 +7,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "metas": "node -e \"import('@onmetas/next-sdk/cli');\""
+    "metas": "node -e \"import('@onmetas/next/cli');\""
   },
   "dependencies": {
-    "@onmetas/next": "workspace:*",
-    "next": "13.2.3",
+    "next": "^13.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.14.6",
+    "@onmetas/next": "workspace:*",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11"
   }
